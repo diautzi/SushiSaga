@@ -17,11 +17,17 @@ function App() {
   //  render only 4 sushis at a time
   const gimmeFour = () => {
     return sushis.slice(startIndex, startIndex + 4)
-  }
+  };
+
+  const moreSushi = () => {
+    setStartIndex(startIndex + 4)
+  };
+  
   return (
     <div className="App">
       <SushiContainer
         sushis={gimmeFour()}
+        moreSushi={moreSushi}
       />
     </div>
   );
