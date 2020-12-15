@@ -62,7 +62,7 @@ body {
 
 .sushi {
   min-width: 150px;
-  justify-content: space-evenly;
+  margin: auto;
 }
 
 .table {
@@ -70,6 +70,7 @@ body {
   background-image: url("https://storybookstorage.s3.amazonaws.com/items/images/000/152/688/original/Table.png?1444827374");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 428px;
   width: 700px;
   justify-self: center;

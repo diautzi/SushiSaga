@@ -18,7 +18,8 @@ export default function SushiContainer({
                         sushi={sushi}
                         eatenSushi={eatenSushi}
                         eatSushi={eatSushi}
-                    />)}
+                    />)
+            }
             <MoreButton moreSushi={moreSushi} />
         </div>
     )
