@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Table({ eatenSushi }) {
+export default function Table({ eatenSushi, wallet}) {
 
     const renderPlates = (array) => {
         return array.map((item, index) => {
@@ -8,6 +8,10 @@ export default function Table({ eatenSushi }) {
         })
     }
     return (
+        <>
+        <h1 className="remaining">
+            You have: ${ wallet} remaining!
+        </h1>
         <div className="table">
             <div className="stack">
                 {
@@ -20,6 +24,7 @@ export default function Table({ eatenSushi }) {
 
                 }
             </div>
-        </div>
+            </div>
+         </>
     )
 };

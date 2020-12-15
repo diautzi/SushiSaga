@@ -8,7 +8,6 @@ export default function SushiContainer({
     eatenSushi,
     eatSushi
 }) {
-    console.log(sushis)
     return (
         <div className="belt">
             {

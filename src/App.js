@@ -8,6 +8,7 @@ function App() {
   const [sushis, setSushis] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [eatenSushi, setEatenSushi] = useState([]);
+  const [wallet, setWallet] = useState(100)
 
   useEffect(() => {
     fetch('http://localhost:3000/sushis')
@@ -26,9 +27,13 @@ function App() {
   };
 
   const eatSushi = (sushi) => {
-    setEatenSushi([...eatenSushi, sushi])
+    if (wallet >= sushi.price) {
+      setEatenSushi([...eatenSushi, sushi])
+      setWallet( wallet - sushi.price)
+    }
+    else
+      alert('Sorry, insufficient founds!')
   };
-  console.log('eatenSushi', eatenSushi)
   
   return (
     <div className="app">
@@ -38,7 +43,10 @@ function App() {
         eatenSushi={eatenSushi}
         eatSushi={eatSushi}
       />
-      <Table eatenSushi={eatenSushi}/>
+      <Table
+        eatenSushi={eatenSushi}
+        wallet={wallet}
+      />
     </div>
   );
 }
