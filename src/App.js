@@ -5,6 +5,7 @@ import SushiContainer from './components/SushiContainer';
 
 function App() {
   const [sushis, setSushis] = useState([])
+  const [startIndex, setStartIndex] = useState(0)
 
   useEffect(() => {
     fetch('http://localhost:3000/sushis')
@@ -13,9 +14,15 @@ function App() {
     .catch(e => console.error(e))
   }, [])
 
+  //  render only 4 sushis at a time
+  const gimmeFour = () => {
+    return sushis.slice(startIndex, startIndex + 4)
+  }
   return (
     <div className="App">
-      <SushiContainer sushis={sushis}/>
+      <SushiContainer
+        sushis={gimmeFour()}
+      />
     </div>
   );
 }
