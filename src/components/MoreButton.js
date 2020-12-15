@@ -8,4 +8,4 @@ export default function MoreButton({ moreSushi }) {
             More Sushi!
         </button>
     )
-}
+};

@@ -13,4 +13,4 @@ export default function Sushi({ sushi }) {
             </div>
         </div>
     )
-}
+};
