@@ -5,8 +5,9 @@ import SushiContainer from './components/SushiContainer';
 import Table from './components/Table';
 
 function App() {
-  const [sushis, setSushis] = useState([])
-  const [startIndex, setStartIndex] = useState(0)
+  const [sushis, setSushis] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
+  const [eatenSushi, setEatenSushi] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/sushis')
@@ -23,14 +24,21 @@ function App() {
   const moreSushi = () => {
     setStartIndex(startIndex + 4)
   };
+
+  const eatSushi = (sushi) => {
+    setEatenSushi([...eatenSushi, sushi])
+  };
+  console.log('eatenSushi', eatenSushi)
   
   return (
     <div className="app">
       <SushiContainer
         sushis={gimmeFour()}
         moreSushi={moreSushi}
+        eatenSushi={eatenSushi}
+        eatSushi={eatSushi}
       />
-      <Table />
+      <Table eatenSushi={eatenSushi}/>
     </div>
   );
 }
