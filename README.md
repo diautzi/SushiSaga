@@ -17,6 +17,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view react app in the browser.
 
 ## Deliverables
+![](sushi-saga-demo.gif)
 - Sushi list is properly received from the server
 - Only 4 sushi are rendered at a time
 - Clicking the "More Sushi!" button shows the next set of 4 sushi in the list. For this assignment, you don't have to be concerned about what happens when you reach the end of the sushi list.
